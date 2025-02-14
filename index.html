@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño de navegación</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+            color: #fff;
+        }
+
+        nav a.active {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        section {
+            padding: 60px 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .social-links {
+            float: right;
+        }
+
+        .social-links a {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#seccion1" class="nav-link">Sección 1</a>
+        <a href="#seccion2" class="nav-link">Sección 2</a>
+        <a href="#seccion3" class="nav-link">Sección 3</a>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </nav>
+
+    <section id="seccion1">
+        <h2>Sección 1</h2>
+        <p>Mi biografía.</p>
+        <p>¡Hola! Me llamo Antonela Cedeño y soy una persona apasionada por la tecnología y el aprendizaje continuo. Nací en Daule, Ecuador y desde pequeña siempre me ha interesado explorar cómo funcionan las cosas. Actualmente, estoy estudiando la carrera de Ingenieria en Sistemas Inteligentes y disfruto mucho trabajando en proyectos relacionados con programación o trabajos en diseño de marketing. 
+            En mi tiempo libre, me gusta leer, programar y pasar tiempo con mis seres queridos.</p>
+    </section>
+
+    <section id="seccion2">
+        <h2>Sección 2</h2>
+        <p>Pasatiempos.</p>
+    </section>
+
+    <section id="seccion3">
+        <h2>Sección 3</h2>
+        <p>Contacto.</p>
+    </section>
+
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
